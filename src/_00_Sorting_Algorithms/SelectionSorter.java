@@ -21,13 +21,15 @@ public class SelectionSorter extends Sorter {
 				if (array[j] < array[index]) {
 
 					index = j;
-
+					display.updateDisplay();
 				}
 
 			}
-
+			
+			int placeholderInt = array[index];
 			array[index] = array[i];
-			display.updateDisplay();
+			array[i] = placeholderInt;
+			
 
 		}
 

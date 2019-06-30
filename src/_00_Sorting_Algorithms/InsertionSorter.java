@@ -19,13 +19,20 @@ public class InsertionSorter extends Sorter {
 		// 3. if the element at j is less than the element at j - 1,
 		// then swap them
 
-		for (int j = 1; j < array.length; j++) {
+		for (int i = 1; i < array.length; i++) {
 
-			for ( int i = 0 ; j >0 ; j++ ) {
-				
+			for (int j = i; j > 0; j--) {
+
+				if (array[j] < array[j - 1]) {
+
+					int placeholderInt;
+					placeholderInt = array[j];
+					array[j] = array[j-1];
+					array[j-1] = placeholderInt;
+					display.updateDisplay();
+					
+				}
 			}
-			
 		}
-
 	}
 }

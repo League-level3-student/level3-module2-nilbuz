@@ -22,6 +22,7 @@ public class BubbleSorter extends Sorter {
 					intHolder = array[i];
 					array[i] = array[i + 1];
 					array[i + 1] = intHolder;
+
 					display.updateDisplay();
 
 				}
