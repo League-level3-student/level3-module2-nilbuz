@@ -28,7 +28,7 @@ public class MergeSorter extends Sorter {
 
 		if (low < high) {
 
-			int middle = (low + high) / 2;
+			int middle = ((low + high) / 2);
 
 			mergeSort(array, low, middle, display);
 
@@ -48,22 +48,20 @@ public class MergeSorter extends Sorter {
 				if (tempArray[i] <= tempArray[j]) {
 					array[k] = tempArray[i];
 					i++;
-					display.updateDisplay();
+				
 				} else {
 					array[k] = tempArray[j];
 					j++;
 					k++;
-					display.updateDisplay();
+					
 				}
 			}
 
 			while (i <= middle) {
-
 				array[k] = tempArray[i];
 				k++;
 				i++;
 				display.updateDisplay();
-
 			}
 		}
 

@@ -16,9 +16,23 @@ public class HeapSorter extends Sorter {
 
 		int n = array.length;
 
-		for (int i = n / 2; i < 0; i--) {
+		for (int i = (n / 2); i < 0; i--) {
 
+			display.updateDisplay();
 			heapSort(array, n, i, display);
+
+		}
+
+		for (int i = n - 1; i < 0; i--) {
+
+			int intHolder;
+			intHolder = array[0];
+			array[0] = array[i];
+			array[i] = intHolder;
+
+			display.updateDisplay();
+			heapSort(array, i, 0, display);
+
 		}
 
 		// 8. create an integer called n and set it equal
@@ -45,6 +59,24 @@ public class HeapSorter extends Sorter {
 
 		if (l < n && array[l] > array[largest]) {
 			largest = l;
+			display.updateDisplay();
+		}
+
+		if (r < n && array[r] > array[largest]) {
+			largest = r;
+			display.updateDisplay();
+		}
+
+		if (largest != i) {
+
+			int intHolder;
+			intHolder = array[i];
+			array[i] = array[largest];
+			array[largest] = intHolder;
+
+			display.updateDisplay();
+			heapSort(array, n, largest, display);
+
 		}
 
 		// 2. create an integer called largest and set it equal to i
