@@ -50,9 +50,11 @@ public class _00_MoreAndMoreTests {
 	}
 
 	private boolean isSquare(int a) {
-		
-		
-		
+
+		if (Math.floor(Math.sqrt(a)) == Math.sqrt(a)) {
+			return true;
+		}
+
 		return false;
 	}
 
@@ -69,18 +71,27 @@ public class _00_MoreAndMoreTests {
 		assertFalse(isSquare(143));
 
 	}
-//
-//	@Test
-//	  public void CubeTest() {
-//
-//	    assertTrue(isCube(27));
-//	    assertTrue(isCube(216));
-//	    assertTrue(isCube(729));
-//	    assertTrue(isCube(1));
-//	    assertFalse(isCube(3));
-//	    assertFalse(isCube(22));
-//	    assertFalse(isCube(143));
-//
-//	  }
+
+	private boolean isCube(int a) {
+		
+		if (Math.floor(Math.cbrt(a)) == Math.cbrt(a)) {
+			return true;
+		}
+		
+		return false;
+	}
+
+	@Test
+	public void CubeTest() {
+
+		assertTrue(isCube(27));
+		assertTrue(isCube(216));
+		assertTrue(isCube(729));
+		assertTrue(isCube(1));
+		assertFalse(isCube(3));
+		assertFalse(isCube(22));
+		assertFalse(isCube(143));
+
+	}
 
 }
